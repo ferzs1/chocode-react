@@ -1,10 +1,12 @@
 import classes from './App.module.css';
+import Toolbar from './components/Navigation/Toolbar/Toolbar';
+import Layout from './hoc/Layout/Layout';
 
 function App() {
   return (
     <div className={classes.App}>
-      <h2>ChoCode áéőúűóüöíá</h2>
-      <p>úőüóüöűőé <strong>űúáéőóüö</strong></p>
+      <Toolbar />
+      <Layout />
     </div>
   );
 }
