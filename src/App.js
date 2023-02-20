@@ -5,8 +5,9 @@ import Layout from './hoc/Layout/Layout';
 function App() {
   return (
     <div className={classes.App}>
-      <Toolbar />
-      <Layout />
+      <Layout>
+        <h2> HEADER</h2>
+      </Layout>
     </div>
   );
 }

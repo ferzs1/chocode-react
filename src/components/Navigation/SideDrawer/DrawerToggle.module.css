@@ -8,6 +8,8 @@
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
+    background-color: white;
+    z-index: 600;
 }
 
 .DrawerToggle div {
