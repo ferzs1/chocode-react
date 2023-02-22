@@ -1,10 +1,20 @@
 .SideDrawer {
-    z-index: 500;
+    z-index: 800;
     width: 80%;
     height: 100%;
+    background-color: white;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    transition: transform .3s ease-out;
+}
+
+.Active {
+    transform: translateX(0);
+}
+
+.Inactive {
+    transform: translateX(-100%);
 }
 
 .NavItems {

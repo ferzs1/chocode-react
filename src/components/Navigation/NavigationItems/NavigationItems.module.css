@@ -4,14 +4,14 @@
     padding:0;
     display:flex;
     flex-flow: column;
+    align-items: center;
     list-style: none;
-    background-color: white;
-    height: 100%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 1200px) {
     .NavItems {
-        margin: 0 30px;
         flex-flow: row;
+        height: 100%;
+        align-items: center;
     }
 }

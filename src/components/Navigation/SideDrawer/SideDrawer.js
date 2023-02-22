@@ -5,12 +5,10 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Aux from '../../../hoc/Aux/Aux';
 
 const sideDrawer = (props) => {
-    const styles = {
-        display: props.open ? 'block' : 'none',
-    };
+    let classForDrawer = [classes.SideDrawer, props.open ? classes.Active : classes.Inactive];
     return (
         <Aux>
-            <div style={styles} className={classes.SideDrawer}>
+            <div className={classForDrawer.join(' ')}>
                 <NavigationItems/>
             </div>
             <Backdrop open={props.open} clicked={props.closeSideDrawer}/>
