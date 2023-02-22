@@ -1,0 +1,12 @@
+.Header {
+    height: 650px;
+    width:100%;
+}
+
+.Header h1 {
+    padding-top: 120px;
+}
+
+.Dot {
+    color: #725757;
+}
