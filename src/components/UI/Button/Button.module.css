@@ -1,0 +1,32 @@
+.Button {
+    width: 240px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    border: none;
+    font-size: .8em;
+    border-radius: 4px;
+}
+
+.CTA {
+    background-color: #59dbd1;
+    color: white;
+}
+
+.CTA:hover {
+    background-color: #94ecdc;
+
+}
+
+.Normal {
+    background-color: rgba( 90, 61, 61, .2 );
+    border: 3px solid #5a3d3d;
+    color: #5a3d3d;
+}
+
+.Normal:hover {
+    background-color: rgba( 90, 61, 61, .1 );
+}
+
+.Button:hover {
+    cursor: pointer;
+}

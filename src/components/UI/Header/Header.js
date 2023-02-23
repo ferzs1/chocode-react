@@ -1,8 +1,8 @@
 import React from 'react';
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 import img from '../../../assets/images/banner.jpg'
-import Aux from '../../../hoc/Aux/Aux';
 import classes from './Header.module.css';
+import Button from '../Button/Button';
 
 const header = (props) => {
     return (
@@ -14,6 +14,13 @@ const header = (props) => {
             >
                 <h1>Programozás<span className={classes.Dot}>.</span></h1>
                 <h2>Könnyen<span className={classes.Dot}>.</span> Érthetően<span className={classes.Dot}>.</span></h2>
+                <p className={classes.Text}>Tanulj meg kódolni az alapoktól online. Szeretnél betekintést nyerni a programozás világába, 
+                    de úgy érzed, neked ez nem menne? Mi biztosítunk afelől, 
+                    hogy képes vagy rá! <a href="/">Jelentkezz</a> a ChoCode fejlesztés-sorozataira most!</p>
+                <div className={classes.Buttons}>
+                    <Button type="Normal">Csomagjaink</Button>
+                    <Button type="CTA">Jelentkezés</Button>
+                </div>
                 <ParallaxBannerLayer image={img} speed={-90} style={{zIndex: '-100', backgroundSize: 'cover', inset: '-300px 0'}}/>
             </ParallaxBanner>
         // </Aux>
