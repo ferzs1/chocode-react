@@ -1,0 +1,19 @@
+.Discount {
+    border-top: 2px solid rgb(235, 235, 235);
+    width: 350px;
+    padding-top: 30px;
+    text-align: justify;
+    line-height: 1.8em;
+}
+
+.Discount :first-child {
+    padding-right: 10px;
+}
+
+.Blue {
+    color: rgb(86, 212, 201);
+}
+
+.Brown {
+    color: rgb(114, 87, 87);
+}
