@@ -1,0 +1,53 @@
+.Package {
+	font-size: 11pt;
+	line-height: 1.8em;
+	text-align: center;
+	width: 28%;
+}
+
+.PckName {
+	color: rgb(114, 87, 87);
+	font-weight: bold;
+	font-size: 16pt;
+	padding: 10px 0;
+}
+
+.Icon {
+	font-size: 42pt;
+	color: rgb(114, 87, 87);
+	font-weight: normal;
+}
+
+.List {
+	list-style: none;
+	text-align: left;
+}
+
+.Good {
+	color: #59dbd1;
+}
+
+.Bad {
+	color: rgb(114, 87, 87);
+	text-decoration: line-through;
+}
+
+.Good :first-child, .Bad :first-child {
+    padding-right: 7px;
+}
+
+.Price {
+	text-align: left;
+	font-weight: bold;
+	color: gray;
+}
+
+.Price span {
+	color: #59dbd1;
+}
+
+@media (min-width: 1100px) {
+	.Package {
+		width: 25%;
+	}
+}
