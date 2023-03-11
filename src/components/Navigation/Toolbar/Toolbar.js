@@ -12,7 +12,7 @@ class Toolbar extends Component {
                 <div className={classes.InnerToolbar}>
                     <DrawerToggle clicked={this.props.toggleSideDrawer}/>
                     <div className={classes.Logo}>
-                        <img src={logo} />
+                        <img src={logo} alt="" />
                     </div>
                     <nav className={classes.DesktopOnly}>
                         <NavigationItems />
