@@ -6,6 +6,7 @@ import AboutUs from './components/content/AboutUs/AboutUs';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Discounts from './components/content/Discounts/Discounts';
 import Packages from './components/content/Packages/Packages';
+import Teachers from './components/content/Teachers/Teachers';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 					<AboutUs />
 					<Discounts />
           			<Packages />
-					{/* <Teachers /> */}
+					<Teachers />
 					{/* <Contact /> */}
 					{/* <Footer /> */}
 				</Layout>
