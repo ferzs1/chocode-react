@@ -7,6 +7,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import Discounts from './components/content/Discounts/Discounts';
 import Packages from './components/content/Packages/Packages';
 import Teachers from './components/content/Teachers/Teachers';
+import Contact from './components/content/Contact/Contact';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
 					<Discounts />
           			<Packages />
 					<Teachers />
-					{/* <Contact /> */}
+					<Contact />
 					{/* <Footer /> */}
 				</Layout>
 			</div>

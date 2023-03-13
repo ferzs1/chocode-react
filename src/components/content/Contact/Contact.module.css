@@ -1,0 +1,63 @@
+.Contact h2 {
+	margin-bottom: 10px;
+}
+
+.Contact {
+	color: gray;
+	font-size: 11pt;
+}
+
+.Content {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.Contact ul {
+	text-align: left;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	list-style: none;
+}
+
+.Contact ul span {
+	display: inline-block;
+	width: 120px;
+	border-right: 1px solid rgb(221, 221, 221);
+	margin-right: 30px;
+	color: #725757;
+}
+
+.Socials {
+	text-align: left;
+	margin: 0 auto;
+	font-size: 1.5em;
+}
+
+.Socials a {
+	margin: 15px;
+	color: #725757;
+}
+
+.Socials a:hover {
+	color: #927272;
+}
+
+@media (min-width: 800px) {
+	.Contact ul {
+        margin: 0;
+	}
+
+	.Content {
+		flex-flow: row;
+		align-items: normal;
+        align-content: space-between;
+        justify-content: space-between;
+        margin: 40px auto 60px auto;
+        width: 75%;
+        max-width: 950px;
+	}
+	.Socials {
+		margin: 0;
+	}
+}
