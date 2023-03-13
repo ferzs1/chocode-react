@@ -8,17 +8,8 @@
 	padding-left: 15px;
 }
 
-.Header {
-	font-size: 1.6em;
-	color: rgb(79, 79, 79);
-	margin-bottom: 60px;
-}
-
-.Subheader {
-	padding-bottom: 20px;
-	margin-top: 30px;
-	font-size: 1.1em;
-	color: rgb(126, 126, 126);
+.Section h3 {
+	margin: 30px auto;
 }
 
 .Discounts {
@@ -26,7 +17,7 @@
 	text-align: center;
 }
 
-.Section *:not(.Header, .Subheader, .Discounts) {
+.Section *:not(.Header, h3, .Discounts) {
 	font-size: 11pt;
 	text-align: justify;
 }

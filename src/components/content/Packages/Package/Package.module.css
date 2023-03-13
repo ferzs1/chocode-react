@@ -82,4 +82,8 @@
 	.Package:not(:first-child) {
 		margin-top: 5px;
 	}
+
+	.Price {
+		text-align: left;
+	}
 }

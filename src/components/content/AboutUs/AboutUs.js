@@ -4,8 +4,8 @@ import classes from './AboutUs.module.css';
 const aboutUs = (props) => {
 	return (
 		<section className={classes.Section}>
-			<h1 className={classes.Header}>Rólunk</h1>
-			<h2 className={classes.Subheader}>Motiváció</h2>
+			<h2 className={classes.Header}>Rólunk</h2>
+			<h3 className={classes.Subheader}>Motiváció</h3>
 			<p>
 				A ChoCode csapata hisz abban, hogy bármit el lehet sajátítani, ha az
 				ember megkapja a megfelelő eszközöket, és emellett eléggé elszánt és
@@ -17,7 +17,7 @@ const aboutUs = (props) => {
 				is meg tudjon oldani olyan feladatokat, melyek a hétköznapokban gyakran
 				előkerülnek.
 			</p>
-			<h2 className={classes.Subheader}>Hogy miért válassz minket?</h2>
+			<h3 className={classes.Subheader}>Hogy miért válassz minket?</h3>
 			<ul>
 				<li>
 					programozási készségeket fejlesztünk kezdőknek és olyanoknak, akik már
@@ -42,7 +42,7 @@ const aboutUs = (props) => {
 					mehess később tovább
 				</li>
 			</ul>
-			<h2 className={classes.Subheader}>Kedvezmények</h2>
+			<h3 className={classes.Subheader}>Kedvezmények</h3>
 			<p className={classes.Discounts}>
 				az itt felsorolt kedvezményekről további információt <a href="/discounts">itt</a> találhatsz
 			</p>
