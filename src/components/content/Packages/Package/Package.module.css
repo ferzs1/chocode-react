@@ -2,7 +2,11 @@
 	font-size: 11pt;
 	line-height: 1.8em;
 	text-align: center;
-	width: 28%;
+	width: 90%;
+}
+
+.Package:not(:first-child) {
+	margin-top: 50px;
 }
 
 .PckName {
@@ -22,6 +26,8 @@
 	list-style: none;
 	text-align: left;
 	color: gray;
+	margin: 0 auto;
+	width: 85%;
 }
 
 .List span {
@@ -40,14 +46,15 @@
 	text-decoration: line-through;
 }
 
-.Good :first-child, .Bad :first-child {
-    padding-right: 7px;
+.Good :first-child,
+.Bad :first-child {
+	padding-right: 7px;
 }
 
 .Price {
 	font-size: 1.1em;
-	text-align: left;
-	/* font-weight: bold; */
+	margin-top: 15px;
+	text-align: center;
 	color: gray;
 }
 
@@ -55,8 +62,24 @@
 	color: #59dbd1;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 450px) {
+	.List {
+		width: 400px;
+	}
+}
+
+@media (min-width: 800px) {
 	.Package {
 		width: 30%;
+		margin-top: 5px;
+	}
+
+	.List {
+		margin: 0;
+		width: 100%;
+	}
+
+	.Package:not(:first-child) {
+		margin-top: 5px;
 	}
 }

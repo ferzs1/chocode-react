@@ -1,8 +1,9 @@
 .Discount {
     border-top: 2px solid rgb(235, 235, 235);
-    width: 350px;
+    width: 80%;
+    margin: 15px;
     padding-top: 30px;
-    text-align: justify;
+    text-align: center;
     line-height: 1.8em;
 }
 
@@ -16,4 +17,11 @@
 
 .Brown {
     color: rgb(114, 87, 87);
+}
+
+@media (min-width: 1170px) {
+    .Discount {
+        width: 350px;
+        text-align: justify;
+    }
 }
