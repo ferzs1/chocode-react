@@ -22,7 +22,7 @@ const teachers = (props) => {
 		</li>
 	));
 	return (
-		<div className={classes.Teachers}>
+		<div id="teachers" className={classes.Teachers}>
 			<h2 className={classes.Header}>Tanáraink</h2>
 			<ul className={classes.TeacherList}>{teachersJsx}</ul>
 			<span className={classes.Text}>

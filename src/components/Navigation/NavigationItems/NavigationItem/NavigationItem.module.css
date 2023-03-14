@@ -1,5 +1,5 @@
 .NavItemLink {
-    text-decoration: none;
+    cursor: pointer;
     color: #725757;
     padding: 10px;
     height: 100%;

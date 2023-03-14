@@ -3,6 +3,13 @@
 	margin: 0 auto;
 }
 
+.Teachers:before { 
+    display: block; 
+    content: " "; 
+    height: 80px;      /* Give height of your fixed element */
+	margin-top: -80px; /* Give negative margin of your fixed element */    
+	visibility: hidden; 
+}
 
 .TeacherList {
 	list-style: none;

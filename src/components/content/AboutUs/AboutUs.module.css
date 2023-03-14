@@ -8,6 +8,14 @@
 	padding-left: 15px;
 }
 
+.Section:before { 
+    display: block; 
+    content: " "; 
+    height: 80px;      /* Give height of your fixed element */
+	margin-top: -80px; /* Give negative margin of your fixed element */    
+	visibility: hidden; 
+}
+
 .Section h3 {
 	margin: 30px auto;
 }

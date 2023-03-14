@@ -3,7 +3,7 @@ import classes from './AboutUs.module.css';
 
 const aboutUs = (props) => {
 	return (
-		<section className={classes.Section}>
+		<section className={classes.Section} id="about-us">
 			<h2 className={classes.Header}>Rólunk</h2>
 			<h3 className={classes.Subheader}>Motiváció</h3>
 			<p>

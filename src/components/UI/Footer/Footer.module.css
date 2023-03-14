@@ -4,6 +4,7 @@
     color: gray;
     display: flex;
     flex-flow: column;
+    min-height: 380px;
 }
 
 .Footer h3 {
