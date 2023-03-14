@@ -1,5 +1,4 @@
 import classes from './App.module.css';
-// import Toolbar from './components/Navigation/Toolbar/Toolbar';
 import Layout from './hoc/Layout/Layout';
 import Header from './components/UI/Header/Header';
 import AboutUs from './components/content/AboutUs/AboutUs';
@@ -8,6 +7,7 @@ import Discounts from './components/content/Discounts/Discounts';
 import Packages from './components/content/Packages/Packages';
 import Teachers from './components/content/Teachers/Teachers';
 import Contact from './components/content/Contact/Contact';
+import Footer from './components/UI/Footer/Footer';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           			<Packages />
 					<Teachers />
 					<Contact />
-					{/* <Footer /> */}
+					<Footer />
 				</Layout>
 			</div>
 		</ParallaxProvider>
