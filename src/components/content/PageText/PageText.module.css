@@ -1,0 +1,9 @@
+.PageText {
+    min-height: 400px;
+    font-size: 13pt;
+    color: black;
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 70%;
+    white-space: pre-line;
+}
