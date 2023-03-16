@@ -2,6 +2,15 @@
     padding-bottom: 50px;
 }
 
+.Main:before { 
+    display: block; 
+    content: " "; 
+    height: 80px;      /* Give height of your fixed element */
+	margin-top: -80px; /* Give negative margin of your fixed element */    
+	visibility: hidden; 
+}
+
+
 .Packages {
     width: 90%;
     display:flex;
