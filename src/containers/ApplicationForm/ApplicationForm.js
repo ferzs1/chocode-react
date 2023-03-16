@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import classes from './SubscriptionForm.module.css';
+import classes from './ApplicationForm.module.css';
 import Input from '../../components/UI/Input/Input';
 import { checkValidity } from '../../shared/utility';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
-const SubscriptionForm = (props) => {
+const ApplicationForm = (props) => {
 	const [formData, setFormData] = useState({
 		name: {
 			type: 'text',
@@ -32,18 +32,54 @@ const SubscriptionForm = (props) => {
 			shouldValidate: true,
 			touched: false,
 		},
-		accept: {
-			type: 'checkbox',
+		address: {
+			type: 'text',
 			config: {
-
+				label: 'Cím',
+			},
+			validation: {
+				required: true,
+				minLength: 8,
+			},
+			valid: false,
+			shouldValidate: true,
+			touched: false,
+		},
+		course: {
+			type: 'select',
+			config: {
+				label: 'Melyik kurzusra jelentkezel?',
+				options: [
+					{ name: 'Python kezdő', value: 'python-beg' },
+					{ name: 'Python haladó', value: 'python-adv' },
+					{ name: 'JavaScript kezdő', value: 'js-beg' },
+					{ name: 'JavaScript haladó', value: 'js-adv' },
+				],
 			},
 			validation: {
 				required: true,
 			},
 			valid: false,
-			shouldValidate: true,
+			shouldValidate: false,
 			touched: false,
-		}
+		},
+		package: {
+			type: 'select',
+			config: {
+				label: 'Melyik csomagot vennéd igénybe?',
+				options: [
+					{ name: 'ECO csomag', value: 'eco' },
+					{ name: 'PRO csomag', value: 'pro' },
+					{ name: 'VIP csomag', value: 'vip' },
+				],
+			},
+			validation: {
+				required: true,
+			},
+			valid: false,
+			shouldValidate: false,
+			touched: false,
+		},
 	});
 	const [formIsValid, setFormIsValid] = useState(false);
 	const [loading, setLoading] = useState(true);
@@ -96,7 +132,7 @@ const SubscriptionForm = (props) => {
 
 	return (
 		<section className={classes.Form}>
-			<div>Hírlevélre való feliratkozás</div>
+			<div>Töltsd ki az alábbi űrlapot!</div>
 			<form className={classes.Subform}>
 				{formInner}
 				<button onClick={applyHandler} className={classes.Button}>
@@ -107,4 +143,4 @@ const SubscriptionForm = (props) => {
 	);
 };
 
-export default SubscriptionForm;
+export default ApplicationForm;
