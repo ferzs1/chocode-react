@@ -6,8 +6,9 @@ import {
 	FaLinkedin,
 	FaTelegram,
 } from 'react-icons/fa';
+import Button from '../Button/Button';
 
-const footer = (props) => {
+const Footer = (props) => {
 	return (
 		<div className={classes.Footer}>
 			<section className={classes.Social}>
@@ -36,9 +37,9 @@ const footer = (props) => {
 				<p>
 					<a href="/adatkezeles">Adatkezelési tájékoztató</a>
 				</p>
-				<p>
-					<a href="/courses">Kurzusok menete</a>
-				</p>
+				<Button btnStyle="link" type="CTA" href="#packages">
+					Kurzusok menete
+				</Button>
 			</section>
 			<section>
 				<h3>Kapcsolat</h3>
@@ -53,4 +54,4 @@ const footer = (props) => {
 	);
 };
 
-export default footer;
+export default Footer;
