@@ -30,3 +30,16 @@
 .Button:hover {
     cursor: pointer;
 }
+
+.Link {
+    cursor: pointer;
+}
+
+.Link:before {
+    content: "> ";
+
+}
+
+.Link:hover {
+    color:#94ecdc;
+}
