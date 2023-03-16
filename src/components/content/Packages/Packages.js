@@ -29,7 +29,7 @@ const packages = (props) => {
 		'1-on-1 mentorálás (4x45 perc)': true,
 	};
 	return (
-		<section className={classes.Main} id='packages'>
+		<section className={classes.Main} id="packages">
 			<h2 className={classes.Header}>Csomagjaink</h2>
 			<section className={classes.Packages}>
 				<PackageComp

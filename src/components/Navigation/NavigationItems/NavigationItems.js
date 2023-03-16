@@ -6,15 +6,15 @@ const navigationItems = (props) => {
     return (
 			<ul className={classes.NavItems}>
 				<NavigationItem link="/">Főoldal</NavigationItem>
-				<NavigationItem link="#about-us" smooth>
+				<NavigationItem link="#about-us">
 					Rólunk
 				</NavigationItem>
-				<NavigationItem link="/courses">Kurzusok</NavigationItem>
+				<NavigationItem link="#packages">Kurzusok</NavigationItem>
 				<NavigationItem link="/apply">Jelentkezés</NavigationItem>
-				<NavigationItem link="#teachers" smooth>
+				<NavigationItem link="#teachers">
 					Tanáraink
 				</NavigationItem>
-				<NavigationItem link="#contact" smooth>
+				<NavigationItem link="#contact">
 					Kapcsolat
 				</NavigationItem>
 			</ul>
