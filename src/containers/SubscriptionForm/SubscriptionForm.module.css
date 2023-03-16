@@ -1,0 +1,38 @@
+.Form {
+    padding: 150px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.Form > div {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.Subform {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+
+.Subform * {
+    width: 100%;
+}
+
+.Button {
+    box-sizing: border-box;
+    width: 80px;
+    color: white;
+    border: 0;
+    margin: 10px 10px 0 0;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #725757; 
+}
+
+@media (min-width: 800px) {
+    .Form {
+        width: 50%;
+    }
+}
