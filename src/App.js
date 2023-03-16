@@ -1,29 +1,34 @@
-import classes from './App.module.css';
+
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import SubscriptionForm from './containers/SubscriptionForm/SubscriptionForm';
+import Home from './components/content/Home/Home';
 import Layout from './hoc/Layout/Layout';
-import Header from './components/UI/Header/Header';
-import AboutUs from './components/content/AboutUs/AboutUs';
-import { ParallaxProvider } from 'react-scroll-parallax';
-import Discounts from './components/content/Discounts/Discounts';
-import Packages from './components/content/Packages/Packages';
-import Teachers from './components/content/Teachers/Teachers';
-import Contact from './components/content/Contact/Contact';
-import Footer from './components/UI/Footer/Footer';
 
 function App() {
-  return (
-		<ParallaxProvider>
-			<div className={classes.App}>
-				<Layout>
-					<Header />
-					<AboutUs />
-					<Discounts />
-          			<Packages />
-					<Teachers />
-					<Contact />
-					<Footer />
-				</Layout>
-			</div>
-		</ParallaxProvider>
+	return (
+		<BrowserRouter>
+			<Routes>
+				{/* <Route path="blogs" element={< />} /> */}
+				<Route
+					index
+					element={
+						<Layout>
+							<Home />
+						</Layout>
+					}
+				/>
+				<Route
+					path="apply"
+					element={
+						<Layout>
+							<SubscriptionForm />
+						</Layout>
+					}
+				/>
+				<Route path="*" element={<Navigate to="/" replace />} />
+				{/* <Route path="*" element={<NoPage />} /> */}
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

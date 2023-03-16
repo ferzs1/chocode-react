@@ -1,20 +1,32 @@
 import React from 'react';
 import classes from './NavigationItem.module.css';
+import { useNavigate } from 'react-router-dom';
 
-const navigationItem = (props) => {
-    const scrollToSection = (sec) => {
-        document.getElementById(sec.substring(1)).scrollIntoView({ behavior: 'smooth' });
-    };
+const NavigationItem = (props) => {
+	const navigate = useNavigate();
 
-    let elem = "";
-    if (props.smooth) {
-        // scroll smooth
-        elem = <a onClick={() => scrollToSection(props.link)} className={classes.NavItemLink}><li className={classes.NavItem}>{props.children}</li></a>;
-    } else {
-        // href
-        elem = <a href={props.link} className={classes.NavItemLink}><li className={classes.NavItem}>{props.children}</li></a>;
-    }
-    return elem;
+    const scrollToSection = async (sec) => {
+		await navigate('/');
+		document.getElementById(sec.substring(1)).scrollIntoView({ behavior: 'smooth' });
+	};
+
+	let elem = '';
+	if (props.link.startsWith('#')) {
+		// scroll smooth
+		elem = (
+			<span onClick={() => { scrollToSection(props.link); }} className={classes.NavItemLink} >
+				<li className={classes.NavItem}>{props.children}</li>
+			</span>
+		);
+	} else {
+		// href
+		elem = (
+			<a href={props.link} className={classes.NavItemLink}>
+				<li className={classes.NavItem}>{props.children}</li>
+			</a>
+		);
+	}
+	return elem;
 };
 
-export default navigationItem;
+export default NavigationItem;
