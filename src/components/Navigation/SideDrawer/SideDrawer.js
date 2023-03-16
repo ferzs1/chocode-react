@@ -8,7 +8,7 @@ const sideDrawer = (props) => {
     let classForDrawer = [classes.SideDrawer, props.open ? classes.Active : classes.Inactive];
     return (
         <Aux>
-            <div className={classForDrawer.join(' ')}>
+            <div className={classForDrawer.join(' ')} onClick={props.closeSideDrawer}>
                 <NavigationItems/>
             </div>
             <Backdrop open={props.open} clicked={props.closeSideDrawer}/>
