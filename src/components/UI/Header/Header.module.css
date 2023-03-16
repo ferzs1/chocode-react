@@ -17,7 +17,7 @@
 
 .Text {
     box-sizing: border-box;
-    margin: 60px auto;
+    margin: 40px auto;
     color: #7a7a7a;
     line-height: 26px;
     font-size: 11pt;
@@ -51,11 +51,9 @@
         flex-flow: row;
         margin-top: 50px;
     }
-}
-
-@media (max-width: 470px ) {
-    .Buttons {
-        height:110px;
+    
+    .Text {
+        margin: 60px auto;
     }
 }
 
