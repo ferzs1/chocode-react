@@ -27,11 +27,7 @@
     background-color: rgba( 90, 61, 61, .1 );
 }
 
-.Button:hover {
-    cursor: pointer;
-}
-
-.Link {
+.Link, .Text, .Button:hover {
     cursor: pointer;
 }
 
@@ -40,6 +36,7 @@
 
 }
 
-.Link:hover {
+.Link:hover, .Text, .Text:hover {
     color:#94ecdc;
 }
+

@@ -13,8 +13,12 @@ const Button = (props) => {
 		document.getElementById(sec.substring(1)).scrollIntoView({ behavior: 'smooth' });
 	};
 
-	let cls = [classes.Link];
-	if (props.btnStyle === 'button') {
+	let cls = [];
+	if (props.btnStyle === "text") {
+		cls = [classes.Text];
+	} else if ( props.btnStyle === 'link') {
+		cls = [classes.Link];
+	} else if (props.btnStyle === 'button') {
 		cls = [classes.Button, classes[props.type]].join(' ');
 	}
 
