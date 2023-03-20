@@ -15,6 +15,7 @@ const SubscriptionForm = (props) => {
 				required: true,
 				minLength: 2,
 			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
@@ -28,6 +29,20 @@ const SubscriptionForm = (props) => {
 				required: true,
 				isEmail: true,
 			},
+			value: '',
+			valid: false,
+			shouldValidate: true,
+			touched: false,
+		},
+		privacy: {
+			type: 'checkbox',
+			config: {
+				label: 'Az Adatkezelési tájékoztatót elolvastam.*',
+			},
+			validation: {
+				required: true,
+			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
@@ -35,31 +50,32 @@ const SubscriptionForm = (props) => {
 		accept: {
 			type: 'checkbox',
 			config: {
-
+				label: 'Fel szeretnék iratkozni a ChoCode hírlevélre.*',
 			},
 			validation: {
 				required: true,
 			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
-		}
+		},
 	});
 	const [formIsValid, setFormIsValid] = useState(false);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		// remove it TODO
 		setTimeout(() => {
 			setLoading(false);
 		}, 200);
 	}, []);
 
 	const onInputChangeHandler = (event, inputId) => {
+		let value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
 		const updatedFormElement = {
 			...formData[inputId],
-			value: event.target.value,
-			valid: checkValidity(event.target.value, formData[inputId].validation),
+			value: value,
+			valid: checkValidity(value, formData[inputId].validation, event.target.type),
 			touched: true,
 		};
 		const updatedOrderForm = { ...formData, [inputId]: updatedFormElement };
@@ -72,7 +88,9 @@ const SubscriptionForm = (props) => {
 		setFormData(updatedOrderForm);
 	};
 
-	const applyHandler = () => {};
+	const applyHandler = () => {
+		// TODO
+	};
 
 	let formInner = Object.keys(formData).map((element) => {
 		const data = formData[element];
@@ -85,6 +103,7 @@ const SubscriptionForm = (props) => {
 				validation={data.validation}
 				shouldValidate={data.shouldValidate}
 				touched={data.touched}
+				valid={data.valid}
 				change={(event) => onInputChangeHandler(event, element)}
 			/>
 		);
