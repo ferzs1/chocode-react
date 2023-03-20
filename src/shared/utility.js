@@ -1,7 +1,7 @@
-export const checkValidity = (value, rules) => {
+export const checkValidity = (value, rules, type) => {
 	let isValid = true;
 	if (rules.required) {
-		isValid = value.trim() !== '' && isValid;
+		isValid = (type === 'checkbox' ? value : value.trim() !== '') && isValid;
 	}
 	if (rules.minLength) {
 		isValid = value.length >= rules.minLength && isValid;

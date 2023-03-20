@@ -3,6 +3,7 @@ import classes from './Input.module.css';
 
 const input = (props) => {
 	let inputElement = null;
+	let label = <label className={classes.Label}>{props.label}</label>;
 	const inputClasses = [classes.InputElement];
 	if (props.touched && !props.valid && props.shouldValidate) {
 		inputClasses.push(classes.Invalid);
@@ -40,6 +41,26 @@ const input = (props) => {
 				</select>
 			);
 			break;
+		case 'checkbox':
+			label = null;
+			inputElement = (
+				<span>
+					<input
+						type="checkbox"
+						required={props.required}
+						name={props.name}
+						id={props.name}
+						style={{display: 'inline', width: '40px'}}
+						onChange={props.change}
+						/>
+					<label className={classes.Label} htmlFor={props.name}
+						style={{display: 'inline', width: '40px'}}
+					>
+						{props.label}
+					</label>
+				</span>
+			);
+			break;
 		default:
 			inputElement = (
 				<input
@@ -53,7 +74,7 @@ const input = (props) => {
 
 	return (
 		<div className={classes.Input}>
-			<label className={classes.Label}>{props.label}</label>
+			{label}
 			{inputElement}
 		</div>
 	);
