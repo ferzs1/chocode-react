@@ -158,8 +158,8 @@ const ApplicationForm = (props) => {
 		for (let datum in formData) {
 			data[datum] = formData[datum].value;
 		}
-		// save application to DB
-		axios.post('http://localhost:3005/api/create', {
+		// save application to db, TODO
+		axios.post('endpoint', {
 			data: data,
 			date: new Date(),
 		});
