@@ -6,4 +6,18 @@
     margin-top: 80px;
     width: 70%;
     white-space: pre-line;
+    margin-bottom:50px;
+}
+
+.PageText h2 {
+    text-align: center;
+}
+.Aszf {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.9em;
+}
+
+.Aszf > ol > li {
+    padding: 40px 0;
 }
