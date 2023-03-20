@@ -3,6 +3,7 @@ import classes from './ApplicationForm.module.css';
 import Input from '../../components/UI/Input/Input';
 import { checkValidity } from '../../shared/utility';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import axios from 'axios';
 
 const ApplicationForm = (props) => {
 	const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const ApplicationForm = (props) => {
 				required: true,
 				minLength: 2,
 			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
@@ -28,6 +30,7 @@ const ApplicationForm = (props) => {
 				required: true,
 				isEmail: true,
 			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
@@ -41,6 +44,7 @@ const ApplicationForm = (props) => {
 				required: true,
 				minLength: 8,
 			},
+			value: '',
 			valid: false,
 			shouldValidate: true,
 			touched: false,
@@ -59,7 +63,8 @@ const ApplicationForm = (props) => {
 			validation: {
 				required: true,
 			},
-			valid: false,
+			value: 'python-beg',
+			valid: true,
 			shouldValidate: false,
 			touched: false,
 		},
@@ -76,13 +81,41 @@ const ApplicationForm = (props) => {
 			validation: {
 				required: true,
 			},
-			valid: false,
+			value: 'eco',
+			valid: true,
 			shouldValidate: false,
+			touched: false,
+		},
+		aszf: {
+			type: 'checkbox',
+			config: {
+				label: 'Elolvastam az ÁSZF-et.*',
+			},
+			validation: {
+				required: true,
+			},
+			value: '',
+			valid: false,
+			shouldValidate: true,
+			touched: false,
+		},
+		datapriv: {
+			type: 'checkbox',
+			config: {
+				label: 'Elolvastam az adatkezelési tájékoztatót.*',
+			},
+			validation: {
+				required: true,
+			},
+			value: '',
+			valid: false,
+			shouldValidate: true,
 			touched: false,
 		},
 	});
 	const [formIsValid, setFormIsValid] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const [appliedState, setAppliedState] = useState(false);
 
 	useEffect(() => {
 		// remove it TODO
@@ -94,8 +127,17 @@ const ApplicationForm = (props) => {
 	const onInputChangeHandler = (event, inputId) => {
 		const updatedFormElement = {
 			...formData[inputId],
-			value: event.target.value,
-			valid: checkValidity(event.target.value, formData[inputId].validation),
+			value:
+				event.target.type === 'checkbox'
+					? event.target.checked
+					: event.target.value,
+			valid: checkValidity(
+				event.target.type === 'checkbox'
+					? event.target.checked
+					: event.target.value,
+				formData[inputId].validation,
+				event.target.type
+			),
 			touched: true,
 		};
 		const updatedOrderForm = { ...formData, [inputId]: updatedFormElement };
@@ -104,11 +146,27 @@ const ApplicationForm = (props) => {
 		for (let key in updatedOrderForm) {
 			formIsValid = updatedOrderForm[key].valid && formIsValid;
 		}
+		console.log('form is valid:' + formIsValid);
 		setFormIsValid(formIsValid);
 		setFormData(updatedOrderForm);
 	};
 
-	const applyHandler = () => {};
+	const applyHandler = (event) => {
+		setLoading(true);
+		event.preventDefault();
+		const data = {};
+		for (let datum in formData) {
+			data[datum] = formData[datum].value;
+		}
+		// save application to DB
+		axios.post('http://localhost:3005/api/create', {
+			data: data,
+			date: new Date(),
+		});
+		// send user to thank you page
+		setAppliedState(true);
+		setLoading(false);
+	};
 
 	let formInner = Object.keys(formData).map((element) => {
 		const data = formData[element];
@@ -120,6 +178,7 @@ const ApplicationForm = (props) => {
 				label={data.config.label}
 				validation={data.validation}
 				shouldValidate={data.shouldValidate}
+				valid={data.valid}
 				touched={data.touched}
 				change={(event) => onInputChangeHandler(event, element)}
 			/>
@@ -130,16 +189,28 @@ const ApplicationForm = (props) => {
 		return <Spinner />;
 	}
 
-	return (
+	let form = (
 		<section className={classes.Form}>
 			<div>Töltsd ki az alábbi űrlapot!</div>
 			<form className={classes.Subform}>
 				{formInner}
-				<button onClick={applyHandler} className={classes.Button}>
+				<button
+					onClick={applyHandler}
+					className={classes.Button}
+					disabled={!formIsValid}
+				>
 					KÜLDÉS
 				</button>
 			</form>
 		</section>
+	);
+
+	return appliedState ? (
+		<p className={classes.ThankYou}>
+			Köszönjük a jelentkezést! <a href="/">Vissza a főoldalra!</a>
+		</p>
+	) : (
+		form
 	);
 };
 

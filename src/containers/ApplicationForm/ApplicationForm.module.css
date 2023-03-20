@@ -31,6 +31,15 @@
     background-color: #725757; 
 }
 
+.ThankYou {
+    min-height: 500px;
+    text-align: center;
+    max-width: 600px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
 @media (min-width: 800px) {
     .Form {
         width: 50%;
