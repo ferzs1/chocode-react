@@ -159,10 +159,12 @@ const ApplicationForm = (props) => {
 			data[datum] = formData[datum].value;
 		}
 		// save application to db, TODO
-		axios.post('endpoint', {
-			data: data,
-			date: new Date(),
+		axios.post('http://react-app.chocode.org/api/applications/save', {
+			data: data
+		}).then( resp => {
+			console.log(resp.data);
 		});
+		;
 		// send user to thank you page
 		setAppliedState(true);
 		setLoading(false);
@@ -188,6 +190,7 @@ const ApplicationForm = (props) => {
 	if (loading) {
 		return <Spinner />;
 	}
+	let cls = [classes.Button, !formIsValid ? classes.ButtonInactive : null];
 
 	let form = (
 		<section className={classes.Form}>
@@ -196,7 +199,7 @@ const ApplicationForm = (props) => {
 				{formInner}
 				<button
 					onClick={applyHandler}
-					className={classes.Button}
+					className={cls.join(' ')}
 					disabled={!formIsValid}
 				>
 					KÜLDÉS
